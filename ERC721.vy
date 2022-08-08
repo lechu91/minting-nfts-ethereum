@@ -41,7 +41,7 @@ event Approval:
 
 name: public(String[32])
 symbol: public(String[32])
-idToURI: HashMap[uint256, String[32]]
+idToURI: public HashMap[uint256, String[32]]
 
 # @dev This emits when an operator is enabled or disabled for an owner. The operator can manage
 #      all NFTs of the owner.
