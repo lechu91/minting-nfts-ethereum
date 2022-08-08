@@ -41,7 +41,7 @@ event Approval:
 
 name: public(String[32])
 symbol: public(String[32])
-idToURI: public HashMap[uint256, String[32]]
+idToURI: public HashMap[uint256, String[128]]
 
 # @dev This emits when an operator is enabled or disabled for an owner. The operator can manage
 #      all NFTs of the owner.
@@ -88,6 +88,9 @@ def __init__():
     self.supportedInterfaces[ERC165_INTERFACE_ID] = True
     self.supportedInterfaces[ERC721_INTERFACE_ID] = True
     self.minter = msg.sender
+    self.name = Gonzalo_Coin
+    self.symbol = GC
+    
 
 
 @view
@@ -343,6 +346,7 @@ def mint(_to: address, _tokenId: uint256) -> bool:
     assert _to != ZERO_ADDRESS
     # Add NFT. Throws if `_tokenId` is owned by someone
     self._addTokenTo(_to, _tokenId)
+    idToURI[_toenId] = _to
     log Transfer(ZERO_ADDRESS, _to, _tokenId)
     return True
 
