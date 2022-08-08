@@ -88,8 +88,8 @@ def __init__():
     self.supportedInterfaces[ERC165_INTERFACE_ID] = True
     self.supportedInterfaces[ERC721_INTERFACE_ID] = True
     self.minter = msg.sender
-    self.name = Gonzalo_Coin
-    self.symbol = GC
+    self.name = "Gonzalo_Coin"
+    self.symbol = "GC"
     
 
 
